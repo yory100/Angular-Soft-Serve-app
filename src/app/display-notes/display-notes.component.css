@@ -1,0 +1,16 @@
+.grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr) ) ;
+    /* height: 150px;  */
+}
+
+p, h4 {
+    max-height: 50px;
+    overflow: hidden;
+}
+
+h4 {
+    max-height: 80px;
+    overflow: hidden;
+}
