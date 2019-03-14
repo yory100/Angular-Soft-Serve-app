@@ -1,7 +1,6 @@
 <div class="container grid">
 
-  <div class="card"
-       *ngFor="let note of notes">
+  <a href="#" class="card" *ngFor="let note of notes">
       <h4 class="card-header">{{ note.title }}</h4>
       <div class="card-body">
         <p class="card-text mb-2">{{ note.message }}</p>
@@ -12,9 +11,8 @@
           <path d="M2 30 L30 2 M30 30 L2 2" />
           </svg> 
         </a>
-    
       </div>
-    </div>
+    </a>
 
 </div>
 
