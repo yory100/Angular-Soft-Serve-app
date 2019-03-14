@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Note } from "../shared/note.model";
+import { Note } from "../../shared/note.model";
 
 @Component({
   selector: 'app-display-notes',
