@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Note } from "../../shared/note.model";
+import { NoteService } from "../../services/note-service.service";
 
 @Component({
   selector: 'app-display-notes',
@@ -8,16 +9,12 @@ import { Note } from "../../shared/note.model";
   styleUrls: ['./display-notes.component.css']
 })
 export class DisplayNotesComponent implements OnInit {
-  notes: Note[] = [
-    new Note( 1, 'Buy something', 'this is a sentence tralalalal 44' ),
-    new Note( 2, 'Buy something 1', 'this is a sentence tralalalal 55' ),
-    new Note( 3, 'Buy something 2', 'this is a sentence tralalalal fds dfsf fgfdg gfhgfhfg  ggf' ),
-    new Note( 4, 'Buy something 3', 'this is a sentence tralalalal fgh hgfghfh hfghgfh hgfhgfh' )
-  ];
+  notes: Note[] = [];
 
-  constructor() { }
+  constructor(private noteService: NoteService) { }
 
   ngOnInit() {
+    this.notes = this.noteService.getData();
   }
 
 }

@@ -1,3 +1,3 @@
 export class Note {
-    constructor( public id: number, public title: string, public message: string ){}
+    constructor( public title: string, public message: string ){}
 }

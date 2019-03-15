@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 import { AddEditComponent } from './components/add-edit/add-edit.component';
 import { DisplaySingleNoteComponent } from './components/display-single-note/display-single-note.component';
+import { NoteService } from "./services/note-service.service";
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { DisplaySingleNoteComponent } from './components/display-single-note/dis
     AppRoutingModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [NoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
