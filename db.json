@@ -1,18 +1,22 @@
 {
   "posts": [
     { 
+      "id": 1,
       "title": "Buy something", 
       "message": "this is a sentence tralalalal 44"
     },
     { 
+      "id": 2,
       "title": "Buy something 1", 
       "message": "this is a sentence tralalalal 41"
     },
     { 
+      "id": 3,
       "title": "Buy something 2", 
       "message": "this is a sentence tralalalal 42"
     },
     { 
+      "id": 4,
       "title": "Buy something 3", 
       "message": "this is a sentence tralalalal 43"
     }
