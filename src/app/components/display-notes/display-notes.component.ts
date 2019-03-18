@@ -7,7 +7,6 @@ import { NoteService } from "../../services/note-service.service";
   selector: 'app-display-notes',
   templateUrl: './display-notes.component.html',
   styleUrls: ['./display-notes.component.css'],
-  providers: [NoteService]
 })
 export class DisplayNotesComponent implements OnInit {
 
@@ -17,7 +16,7 @@ export class DisplayNotesComponent implements OnInit {
   constructor(private noteService: NoteService) { }
 
   ngOnInit() {
-    this.noteService.getData().subscribe(
+    this.noteService.getNotes().subscribe(
       data => this.notes = data,
       error => {this.error = error.message; console.log(error);}
     );

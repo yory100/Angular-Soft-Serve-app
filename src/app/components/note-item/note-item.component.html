@@ -1,15 +1,15 @@
 <a class="card"
 [routerLink]=" ['/details', note.id]"
  routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-<h4 class="card-header">{{ note.title }}</h4>
-<div class="card-body">
- <p class="card-text mb-2">{{ note.message }}</p>
+  <h4 class="card-header">{{ note.title }}</h4>
+  <div class="card-body">
+    <p class="card-text mb-2">{{ note.message }}</p>
 
- <a class="card-link">
-   <svg id="i-close" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-   <path d="M2 30 L30 2 M30 30 L2 2" />
-   </svg> 
- </a>
-</div>
+    <a class="card-link" (click)="onDelete(note)">
+      <svg id="i-close" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <path d="M2 30 L30 2 M30 30 L2 2" />
+      </svg> 
+    </a>
+  </div>
 </a>
 
