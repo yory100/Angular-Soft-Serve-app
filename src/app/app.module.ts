@@ -9,6 +9,7 @@ import { DisplayNotesComponent } from './components/display-notes/display-notes.
 import { AddEditComponent } from './components/add-edit/add-edit.component';
 import { DisplaySingleNoteComponent } from './components/display-single-note/display-single-note.component';
 import { NoteService } from "./services/note-service.service";
+import { NoteItemComponent } from './components/note-item/note-item.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { NoteService } from "./services/note-service.service";
     HeaderComponent,
     DisplayNotesComponent,
     AddEditComponent,
-    DisplaySingleNoteComponent
+    DisplaySingleNoteComponent,
+    NoteItemComponent
   ],
   imports: [
     BrowserModule,

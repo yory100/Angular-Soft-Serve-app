@@ -11,7 +11,7 @@ import { NoteService } from "../../services/note-service.service";
 })
 export class DisplayNotesComponent implements OnInit {
 
-  notes: any = [];
+  notes: Note[];
   error:any;
 
   constructor(private noteService: NoteService) { }
