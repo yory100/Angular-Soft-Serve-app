@@ -2,5 +2,12 @@
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr) ) ;
-    /* height: 150px;  */
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .grid {
+        display: flex;
+        flex-direction: column;
+    }
 }

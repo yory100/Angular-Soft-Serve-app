@@ -25,19 +25,16 @@ export class AddEditComponent implements OnInit {
     this.id = activateRoute.snapshot.params['id'];
   }
 
-
-
-  // this.noteService.postEdited( this.textNote ).subscribe(
-  // note => console.log( note )
-  // );
-  //noteService.postAdded( this.textNote );
-
   ngOnInit() {
 
     //If editing existing note - load existing note data to form
     if( this.id ) { 
       this.noteService.getSingleNotes( this.id ).subscribe(
-        data => this.note = data ,
+        data => {
+          this.note = data;
+          this.title = data.title;
+          this.message = data.message;
+        },
         error => { this.error = error.message; console.log(error); }
       ); 
     }
@@ -49,12 +46,22 @@ export class AddEditComponent implements OnInit {
       title: this.title,
       message: this.message
     }
-
     if( textNote ){
-      this.noteService.addNote( textNote ).subscribe(
-        data => this.router.navigate(['/home']),
-        error => { this.error = error.message; console.log(error); }
-      );
+      if ( this.id ) {
+        this.note.title = this.title;
+        this.note.message = this.message;    
+        //Updating existing notes
+        this.noteService.postEdited( this.note ).subscribe(
+          data => this.router.navigate(['/home']),
+          error => { this.error = error.message; console.log(error); }
+        );
+      }else{
+        // adding new notes
+        this.noteService.addNote( textNote ).subscribe(
+          data => this.router.navigate(['/home']), //if adding note succesfull redirect to home page
+          error => { this.error = error.message; console.log(error); }
+        );
+      }
     }
   }
 
