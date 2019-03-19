@@ -22,5 +22,11 @@ export class DisplayNotesComponent implements OnInit {
     );
   }
 
+  deleteNote( note: Note ) {
+    event.preventDefault();
+    this.notes = this.notes.filter( t => t.id !== note.id ); // Delete from UI
+    this.noteService.deleteNote( note ).subscribe(); // Delete from server
+  }
+
 
 }

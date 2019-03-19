@@ -4,6 +4,12 @@ import { Observable } from 'rxjs';
 
 import { Note } from "../shared/note.model";
 
+const httpOptions = {
+    headers: new HttpHeaders({
+        'Content-type': 'application/json'
+    })
+}
+
 
 @Injectable({
     providedIn: 'root'
@@ -25,4 +31,13 @@ export class NoteService {
         return this.http.get<Note>( this.notesUrl + '/' + id );
     }
 
+    postEdited( note: Note ): Observable<any> {
+        const url = `${this.notesUrl}/${note.id}`
+        return this.http.put(url, note, httpOptions);
+    }
+
+    deleteNote( note: Note ): Observable<Note>{
+        const url = `${this.notesUrl}/${note.id}`
+        return this.http.delete<Note>(url, httpOptions);
+    }
 }

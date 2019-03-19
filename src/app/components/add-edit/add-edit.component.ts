@@ -14,6 +14,12 @@ export class AddEditComponent implements OnInit {
   textNote: Note;
   error:any;
 
+  //model = new Note(18, 'Dr IQ', 'Chuck Overstreet');
+
+  submitted = false;
+
+  onSubmit() { this.submitted = true; }
+
   constructor(
     private activateRoute: ActivatedRoute,
     private noteService: NoteService
@@ -21,11 +27,18 @@ export class AddEditComponent implements OnInit {
     this.id = activateRoute.snapshot.params['id'];
   }
 
+
+
+  // this.noteService.postEdited( this.textNote ).subscribe(
+  // note => console.log( note )
+  // );
+  //noteService.postAdded( this.textNote );
+
   ngOnInit() {
     if( this.id ) { 
       this.noteService.getSingleNotes( this.id ).subscribe(
-      data => this.textNote = data ,
-      error => { this.error = error.message; console.log(error); }
+        data => this.textNote = data ,
+        error => { this.error = error.message; console.log(error); }
       ); 
     }
   }
