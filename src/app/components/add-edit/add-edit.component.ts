@@ -22,10 +22,12 @@ export class AddEditComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.noteService.getSingleNotes( this.id ).subscribe(
+    if( this.id ) { 
+      this.noteService.getSingleNotes( this.id ).subscribe(
       data => this.textNote = data ,
       error => { this.error = error.message; console.log(error); }
-    );
+      ); 
+    }
   }
 
 }
