@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
+import { Router , ActivatedRoute} from '@angular/router';
 import { Note } from '@app/shared/note.model';
 import { NoteService } from "../../services/note-service.service";
 
@@ -11,20 +11,15 @@ import { NoteService } from "../../services/note-service.service";
 export class AddEditComponent implements OnInit {
 
   id: number;
-  textNote: Note;
+  note: Note;
   error:any;
 
   title: string;
   message: string;
 
-  //model = new Note(18, 'Dr IQ', 'Chuck Overstreet');
-
-  submitted = false;
-
-  onSubmit() { this.submitted = true; }
-
   constructor(
     private activateRoute: ActivatedRoute,
+    private router: Router,
     private noteService: NoteService
   ) {
     this.id = activateRoute.snapshot.params['id'];
@@ -38,11 +33,28 @@ export class AddEditComponent implements OnInit {
   //noteService.postAdded( this.textNote );
 
   ngOnInit() {
+
+    //If editing existing note - load existing note data to form
     if( this.id ) { 
       this.noteService.getSingleNotes( this.id ).subscribe(
-        data => this.textNote = data ,
+        data => this.note = data ,
         error => { this.error = error.message; console.log(error); }
       ); 
+    }
+  }
+
+  
+  onSubmit():void { 
+    const textNote = {
+      title: this.title,
+      message: this.message
+    }
+
+    if( textNote ){
+      this.noteService.addNote( textNote ).subscribe(
+        data => this.router.navigate(['/home']),
+        error => { this.error = error.message; console.log(error); }
+      );
     }
   }
 

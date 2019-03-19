@@ -1,11 +1,11 @@
 
-p, h4 {
-    max-height: 50px;
+p {
+    height: 50px;
     overflow: hidden;
 }
 
 h4 {
-    max-height: 80px;
+    height: 80px;
     overflow: hidden;
 }
 
