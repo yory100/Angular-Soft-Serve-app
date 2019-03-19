@@ -14,6 +14,9 @@ export class AddEditComponent implements OnInit {
   textNote: Note;
   error:any;
 
+  title: string;
+  message: string;
+
   //model = new Note(18, 'Dr IQ', 'Chuck Overstreet');
 
   submitted = false;
