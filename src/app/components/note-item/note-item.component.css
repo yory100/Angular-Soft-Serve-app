@@ -17,6 +17,10 @@ a:hover {
     color: darkgray;
 }
 
+a.card-link:hover {
+    color: black;
+}
+
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     a.card {

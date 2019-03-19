@@ -6,16 +6,6 @@
       "message": "this is a sentence tralalalal 44"
     },
     {
-      "id": 3,
-      "title": "Buy something 2",
-      "message": "this is a sentence tralalalal 42"
-    },
-    {
-      "title": "5",
-      "message": "tretetretre",
-      "id": 4
-    },
-    {
       "title": "Kupi hlqb",
       "message": "Tralalalala i na koncheto guza",
       "id": 5
@@ -29,6 +19,11 @@
       "title": "yyyyyyyyyyyyyyy",
       "message": "yyyyyyyyyyyyyyyyyyyyyyyyyyy",
       "id": 7
+    },
+    {
+      "title": "Cafe",
+      "message": "Kupi kafe",
+      "id": 8
     }
   ]
 }

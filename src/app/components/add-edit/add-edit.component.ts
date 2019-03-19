@@ -13,6 +13,7 @@ export class AddEditComponent implements OnInit {
   id: number;
   note: Note;
   error:any;
+  some: any;
 
   title: string;
   message: string;
