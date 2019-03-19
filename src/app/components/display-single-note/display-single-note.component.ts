@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
+import { Note } from '@app/shared/note.model';
+import { NoteService } from "../../services/note-service.service";
 
 @Component({
   selector: 'app-display-single-note',
@@ -9,7 +11,13 @@ import { ActivatedRoute} from '@angular/router';
 export class DisplaySingleNoteComponent implements OnInit {
 
   id: number;
-  constructor(private activateRoute: ActivatedRoute){
+  textNote: Note;
+  error:any;
+
+  constructor(
+    private activateRoute: ActivatedRoute,
+    private noteService: NoteService 
+  ){
        
       this.id = activateRoute.snapshot.params['id'];
   }
@@ -17,6 +25,11 @@ export class DisplaySingleNoteComponent implements OnInit {
   
 
   ngOnInit() {
+
+    this.noteService.getSingleNotes( this.id ).subscribe(
+      data => this.textNote = data ,
+      error => { this.error = error.message; console.log(error); }
+    );
   }
 
 }

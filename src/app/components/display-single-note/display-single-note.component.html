@@ -1,13 +1,12 @@
 <div class="card">
-  <h4 class="card-header">title</h4>
+  <h4 class="card-header">{{ textNote?.title }}</h4>
   <div class="card-body">
-    <p class="card-text mb-5">Some text from the Note</p>
+    <p class="card-text mb-5">{{ textNote?.message }}</p>
 
     <!-- Edit button hidden when delete buton -->
     <button class="btn btn-outline-secondary"
       [routerLink]=" ['/editnote', id]"
       routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">EDIT</button>
-      <p>{{id}}</p>
 
   </div>
 </div>

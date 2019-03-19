@@ -18,8 +18,11 @@ export class NoteService {
     ) { }
 
     getNotes(): Observable<Note[]> {
-
         return this.http.get<Note[]>( this.notesUrl );
+    }
+
+    getSingleNotes( id: number ): Observable<Note> {
+        return this.http.get<Note>( this.notesUrl + '/' + id );
     }
 
 }
