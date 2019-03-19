@@ -19,7 +19,9 @@
 
       <!-- Serch input replacing zoomin lens -->
       <div class="pull-right">
-          <input type="text" class="nav-item">
+
+          <input type="text" class="nav-item" (keyup)="onSearch($event)">
+
       <!-- Plus icon for adding notes -->
         <a class="nav-item ml-3"
           [routerLink]=" ['/addnote'] "

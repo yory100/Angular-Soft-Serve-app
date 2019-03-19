@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  searchText: string;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSearch(event: any):void {
+    this.searchText = event.target.value;
+    console.log( this.searchText )
   }
 
 }
