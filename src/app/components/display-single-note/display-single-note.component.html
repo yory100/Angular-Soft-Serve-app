@@ -3,7 +3,6 @@
   <div class="card-body">
     <p class="card-text mb-5">{{ textNote?.message }}</p>
 
-    <!-- Edit button hidden when delete buton -->
     <button class="btn btn-outline-secondary"
       [routerLink]=" ['/editnote', id]"
       routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">EDIT</button>

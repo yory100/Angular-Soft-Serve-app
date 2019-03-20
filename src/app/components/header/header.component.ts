@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-header',
@@ -9,14 +10,14 @@ export class HeaderComponent implements OnInit {
 
   searchText: string;
 
-  constructor() { }
+  constructor(
+    private searchService: SearchService
+  ) { }
 
   ngOnInit() {
   }
 
-  onSearch(event: any):void {
-    this.searchText = event.target.value;
-    console.log( this.searchText )
+  search(){
+    this.searchService.changeNav( this.searchText )
   }
-
 }

@@ -10,7 +10,9 @@ import { DisplayNotesComponent } from './components/display-notes/display-notes.
 import { AddEditComponent } from './components/add-edit/add-edit.component';
 import { DisplaySingleNoteComponent } from './components/display-single-note/display-single-note.component';
 import { NoteService } from "./services/note-service.service";
+import { SearchService } from "./services/search.service";
 import { NoteItemComponent } from './components/note-item/note-item.component';
+import { NoteFilter } from './pipes/note-filter.pipe';
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { NoteItemComponent } from './components/note-item/note-item.component';
     DisplayNotesComponent,
     AddEditComponent,
     DisplaySingleNoteComponent,
-    NoteItemComponent
+    NoteItemComponent,
+    NoteFilter
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { NoteItemComponent } from './components/note-item/note-item.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [NoteService],
+  providers: [NoteService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

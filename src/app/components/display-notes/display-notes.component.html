@@ -1,10 +1,9 @@
 <div class="grid">
 
   <app-note-item 
-    *ngFor="let note of notes" 
+    *ngFor="let note of notes  | noteFilter:searchTerm"
     [note]="note"
     (deleteNote)="deleteNote($event)">
   </app-note-item>
 
 </div>
-

@@ -8,20 +8,12 @@
         <h4>Notes</h4>
       </a>
 
-      <!-- Zooming lens icon -->
-      <!-- <a href="#" class="nav-item">
-        <svg id="i-search" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round"
-          stroke-linejoin="round" stroke-width="2">
-          <circle cx="14" cy="14" r="12" />
-          <path d="M23 23 L30 30" />
-        </svg>
-      </a> -->
+      <!-- Serch input -->
+      <form (keyup)="search()">
+        <input type="text" placeholder="search" [(ngModel)]="searchText" name="searchText">
+      </form>
 
-      <!-- Serch input replacing zoomin lens -->
       <div class="pull-right">
-
-          <input type="text" class="nav-item" (keyup)="onSearch($event)">
-
       <!-- Plus icon for adding notes -->
         <a class="nav-item ml-3"
           [routerLink]=" ['/addnote'] "

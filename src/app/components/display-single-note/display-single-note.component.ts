@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute} from '@angular/router';
+import { Subscription } from "rxjs";
+
 import { Note } from '@app/shared/note.model';
 import { NoteService } from "../../services/note-service.service";
 
@@ -13,6 +15,8 @@ export class DisplaySingleNoteComponent implements OnInit {
   id: number;
   textNote: Note;
   error:any;
+
+  subscriptionDelete: Subscription;
 
   constructor(
     private activateRoute: ActivatedRoute,
@@ -32,8 +36,8 @@ export class DisplaySingleNoteComponent implements OnInit {
   }
 
   onDelete( note: Note ) {
-    this.noteService.deleteNote( note ).subscribe(
-      data => this.router.navigate(['/home']),
+    this.subscriptionDelete = this.noteService.deleteNote( note ).subscribe(
+      data => {this.router.navigate(['/home']); this.subscriptionDelete.unsubscribe()},
       error => { this.error = error.message; console.log(error); }
     );
   }
