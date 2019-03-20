@@ -54,6 +54,7 @@ export class DisplayNotesComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+    this.subscriptionSearch.unsubscribe();
   }
 
 
