@@ -13,6 +13,7 @@ import { NoteService } from "./services/note-service.service";
 import { SearchService } from "./services/search.service";
 import { NoteItemComponent } from './components/note-item/note-item.component';
 import { NoteFilter } from './pipes/note-filter.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { NoteFilter } from './pipes/note-filter.pipe';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [NoteService, SearchService],
   bootstrap: [AppComponent]
