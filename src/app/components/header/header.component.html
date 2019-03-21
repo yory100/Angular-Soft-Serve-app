@@ -8,17 +8,16 @@
         <h4>Notes</h4>
       </a>
 
-      <!-- Serch input -->
-      <form (keyup)="search()">
-        <input type="text" placeholder="search" [(ngModel)]="searchText" name="searchText">
-      </form>
-
       <div class="pull-right">
+
+        <!-- Serch input -->
+        <input type="text" placeholder="search" [(ngModel)]="searchText" name="searchText" (keyup)="search()">
+
       <!-- Plus icon for adding notes -->
-        <a class="nav-item ml-3"
+        <a class="nav-item ml-5 mr-3"
           [routerLink]=" ['/addnote'] "
           routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-          <svg id="i-plus" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round"
+          <svg id="i-plus" viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentcolor" stroke-linecap="round"
             stroke-linejoin="round" stroke-width="2">
             <path d="M16 2 L16 30 M2 16 L30 16" />
           </svg>
