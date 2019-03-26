@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from "rxjs";
+import { Subject } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -8,7 +8,7 @@ import { BehaviorSubject } from "rxjs";
 export class SearchService {
 
     //Observable native source
-    private navSearchSource = new BehaviorSubject<string>(null);
+    private navSearchSource = new Subject<string>();
 
     //Observable native stream
     navitem$ = this.navSearchSource.asObservable();
@@ -18,3 +18,4 @@ export class SearchService {
     }
 
 }
+
